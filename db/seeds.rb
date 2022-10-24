@@ -24,3 +24,8 @@ airports[6] = Airport.create(code: 'SLC', name: 'Salt Lake City International Ai
 airports[7] = Airport.create(code: 'DFW', name: 'Dallas / Fort Worth International Airport', city: 'Dallas')
 airports[8] = Airport.create(code: 'SEA', name: 'Seattle-Tacoma International Airport', city: 'Seattle')
 airports[9] = Airport.create(code: 'BOS', name: 'Logan International Airport', city: 'Boston')
+
+
+flights = []
+
+flight[0] = Flight.create()
