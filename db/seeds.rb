@@ -25,6 +25,10 @@ airports[7] = Airport.create(code: 'DFW', name: 'Dallas / Fort Worth Internation
 airports[8] = Airport.create(code: 'SEA', name: 'Seattle-Tacoma International Airport', city: 'Seattle')
 airports[9] = Airport.create(code: 'BOS', name: 'Logan International Airport', city: 'Boston')
 
+# t.integer :departure_airport_id
+# t.integer :arrival_airport_id
+# t.datetime :start_date_time
+# t.integer :flight_duration
 
 flights = []
 
