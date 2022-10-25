@@ -10,7 +10,17 @@
 #   Booking.destroy_all
 #   Passenger.destroy_all
 #   Flight.destroy_all
-#   Airport.destroy_all
+def time_rand from = 0.0, to = Time.now
+    Time.at(from + rand * (to.to_f - from.to_f))
+end
+
+# t.integer :departure_airport_id
+# t.integer :arrival_airport_id
+# t.datetime :start_date_time
+# t.integer :flight_duration
+
+  Airport.destroy_all
+  Flight.destroy_all
 
 
 airports = []
@@ -25,11 +35,15 @@ airports[7] = Airport.create(code: 'DFW', name: 'Dallas / Fort Worth Internation
 airports[8] = Airport.create(code: 'SEA', name: 'Seattle-Tacoma International Airport', city: 'Seattle')
 airports[9] = Airport.create(code: 'BOS', name: 'Logan International Airport', city: 'Boston')
 
-# t.integer :departure_airport_id
-# t.integer :arrival_airport_id
-# t.datetime :start_date_time
-# t.integer :flight_duration
+airports.each do |departure|
+  airports.reverse.each do |arrival|
+    if departure != arrival
+      Flight.create(departure_airport: departure ,arrival_airport: arrival , start_date_time: 2, flight_duration:50)
+    end
+  end
+end
 
-flights = []
 
-flight[0] = Flight.create()
+
+p "created #{Airport.count} Airports"
+p "created #{Flight.count} Flights"

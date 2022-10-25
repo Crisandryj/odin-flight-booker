@@ -1,1 +1,5 @@
-HELLO WORLD
+<%= form_with model: @flight, method: :get do |f| %>
+
+ <%= f.select(:departure_airport, @airports) %>
+
+<% end %>
