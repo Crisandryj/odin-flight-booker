@@ -8,7 +8,8 @@ class FlightsController < ApplicationController
   def index
     @flights = Flight.all
     @airports = Airport.all.map{ |a| [ a.code, a.id] }
-    @dates = @flights.map {|f| [f.start_date_time.strftime('%m/%d/%Y'),f.start_date_time]}
+    @dates = @flights.map {|f| [f.start_date_time.strftime("%m/%d/%Y"),f.start_date_time]}
+    @dates = @dates.uniq
     @searched_flights = Flight.where(flight_params) unless Flight.where(flight_params).nil?
   end
 

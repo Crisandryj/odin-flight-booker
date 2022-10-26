@@ -6,10 +6,14 @@
  <%= f.select(:arrival_airport, @airports) %>
 
  <%= f.label :departure_time %>
- <%= f.select :start_date_time, @dates %>
+ <%= f.select :start_date_time, @dates%>
 
  <%= f.submit %>
 
 <% end %>
 
-<%= @searched_flights %>
+<%=form_with model: @booking, method: :get do %>
+<%@searched_flights.each do |f|%>
+<%= f.departure_airport_id %>
+
+<%end %>

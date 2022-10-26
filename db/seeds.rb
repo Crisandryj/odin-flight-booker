@@ -38,7 +38,7 @@ airports[9] = Airport.create(code: 'BOS', name: 'Logan International Airport', c
 airports.each do |departure|
   airports.reverse.each do |arrival|
     if departure != arrival
-      Flight.create(departure_airport: departure ,arrival_airport: arrival , start_date_time: time_rand, flight_duration: rand(220))
+      Flight.create(departure_airport: departure ,arrival_airport: arrival , start_date_time: '1/1/2020', flight_duration: rand(220))
     end
   end
 end
