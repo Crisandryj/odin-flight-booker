@@ -5,13 +5,11 @@
  <%= f.label :arrival_airport %>
  <%= f.select(:arrival_airport, @airports) %>
 
- <%= f.label :departure_Time %>
+ <%= f.label :departure_time %>
  <%= f.select :start_date_time, @dates %>
-
- <%= f.label :number_of_passengers %>
- <%= f.select(:number_of_passengers,(1..4)) %>
-
 
  <%= f.submit %>
 
 <% end %>
+
+<%= @searched_flights %>
