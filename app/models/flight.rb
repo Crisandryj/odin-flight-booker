@@ -5,5 +5,5 @@ class Flight < ApplicationRecord
   def start_date_time_formatted
   start_date_time.strftime("%m/%d/%Y")
   end
-  
+
 end
