@@ -1,15 +1,10 @@
 <%= render :partial => "search_form"%>
 <%=form_with model: @booking, method: :get do |f| %>
 
-<%= f.hidden_field :passengers %>
+<%= f.hidden_field :passengers, :value => @passengers %>
 
 <%= f.label :departure_airport %>
-<%= f.collection_check_boxes :departure_airport_id, @searched_flights, :id, :arrival_airport_id %>
-
-<%= f.hidden_field :passengers %>
+<%= f.collection_check_boxes :departure_airport_id, @searched_flights, :id, :departure_airport_id %>
 
  <%= f.submit %>
 <% end %>
-
-
-<%= Flight.all%>
