@@ -4,9 +4,12 @@
 <%= f.hidden_field :passengers %>
 
 <%= f.label :departure_airport %>
-<%= f.collection_check_boxes :departure_airport_id, Flight.all, :id, :arrival_airport_id %>
+<%= f.collection_check_boxes :departure_airport_id, @searched_flights, :id, :arrival_airport_id %>
 
 <%= f.hidden_field :passengers %>
 
  <%= f.submit %>
 <% end %>
+
+
+<%= Flight.all%>
