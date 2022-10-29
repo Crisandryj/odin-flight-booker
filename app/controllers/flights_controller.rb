@@ -1,7 +1,6 @@
 class FlightsController < ApplicationController
 
   def new
-    # @airports = Airport.all.map{ |a| [a.id, a.code] }
     @flight = Flight.new
   end
 
@@ -27,6 +26,5 @@ class FlightsController < ApplicationController
   def passengers_params
     params.require(:passengers)
   end
-
 
 end

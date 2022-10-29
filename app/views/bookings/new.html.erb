@@ -1,0 +1,10 @@
+<%= @booking.number_of_passengers%>
+<%= @booking.flight_id%>
+
+<%=form_with model: @booking, method: :get do |f| %>
+
+
+ <%= f.submit %>
+<% end %>
+
+<%= @passengers %>
