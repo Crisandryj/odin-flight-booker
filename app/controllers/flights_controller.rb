@@ -24,7 +24,7 @@ class FlightsController < ApplicationController
   end
 
   def passengers_params
-    params.require(:passengers)
+    params.permit(:passengers)
   end
 
 end

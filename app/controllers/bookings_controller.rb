@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
   def new
-    @booking = Booking.new(number_of_passengers: @passengers, flight_id: flight_params)
-    # raise params.inspect
+    @booking = Booking.new(number_of_passengers: params[:passengers], flight_id:params[:flight_id])
+    @arrival_airport = params[:arrival_airport]
+     # raise params.inspect
   end
 
   def create
@@ -9,10 +10,6 @@ class BookingsController < ApplicationController
   end
 
   private
-
-  def flight_params
-    params.require(:flight_id)
-  end
 
 
 end
