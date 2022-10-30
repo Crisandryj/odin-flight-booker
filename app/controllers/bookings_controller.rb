@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
     @passengers = params[:passengers]
     @flight_id = params[:flight_id][1]
     @start_date_time = params[:start_date_time]
-
+    @passenger = Passenger.new()
     # raise params.inspect
   end
 

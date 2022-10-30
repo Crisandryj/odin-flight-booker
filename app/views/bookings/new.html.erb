@@ -1,14 +1,31 @@
 <%=form_with model: @booking, method: :get do |f| %>
+<%= f.label :departure_date %>
+<%= f.text_field :start_date_time, value: @start_date_time %>
 
+<div>
  <%= f.label :passengers %>
  <%= f.number_field :passengers, value: @passengers %>
 
  <%= f.label :flight_id %>
  <%= f.number_field :flight_id, value: @flight_id %>
+</div>
 
- <%= f.label :departure_date %>
- <%= f.text_field :start_date_time, value: @start_date_time %>
 
+  <% @passengers.to_i.times do %>
+    <%= f.fields_for @passenger do |sub_form| %>
+
+    <div>
+    <%= sub_form.label :email %>
+    <%= sub_form.text_field :email %>
+    </div>
+
+    <div>
+    <%= sub_form.label :name %>
+    <%= sub_form.text_field :name %>
+    </div>
+
+    <% end %>
+  <% end %>
 
  <%= f.submit %>
 <% end %>
