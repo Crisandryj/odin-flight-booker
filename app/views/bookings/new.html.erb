@@ -1,5 +1,10 @@
 <%=form_with model: @booking, method: :get do |f| %>
+
  <%= f.label :passengers %>
  <%= f.number_field :passengers, value: @passengers %>
+
+ <%= f.label :flight_id %>
+ <%= f.number_field :flight_id, value: @flight_id %>
+
  <%= f.submit %>
 <% end %>
