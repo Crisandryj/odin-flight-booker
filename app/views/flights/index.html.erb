@@ -6,6 +6,7 @@
 <%= f.hidden_field :passengers, :value => params[:passengers] %>
 <%= f.hidden_field :arrival_airport, :value => params[:arrival_airport] %>
 <%= f.hidden_field :departure_time, :value => params[:departure_time] %>
+<%= f.hidden_field :start_date_time, :value => params[:start_date_time] %>
 
 <%= f.label :departure_airport %>
 <%= f.collection_check_boxes :flight_id, @searched_flights, :id, :departure_airport_id %>
