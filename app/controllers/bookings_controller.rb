@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new()
-     raise params.inspect
+    @passengers = params[:passengers]
   end
 
   def create

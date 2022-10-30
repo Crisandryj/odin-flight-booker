@@ -1,8 +1,7 @@
 <%= render :partial => "search_form"%>
-<%=form_with url: new_booking_path(:arrival_airport => params[:arrival_airport],
-                                  :flight_id => params[:flight_id],
-                                  :passengers=> params[:passengers],),
-                                  method: :get do |f| %>
+<%=form_with url: new_booking_path(:flight_id => params[:flight_id],
+                                   :passengers=> params[:passengers],),
+                                    method: :get do |f| %>
 
 <%= f.hidden_field :passengers, :value => params[:passengers] %>
 <%= f.hidden_field :arrival_airport, :value => params[:arrival_airport] %>
