@@ -7,10 +7,8 @@ class FlightsController < ApplicationController
   def index
     @flights = Flight.all
     @airports = Airport.all.map{ |a| [ a.code, a.id] }
-    @dates = @flights.map {|f| [f.start_date_time.strftime("%m/%d/%Y"),f.start_date_time]}
-    @dates = @dates.uniq
+    @dates = @flights.map {|f| [f.start_date_time.strftime("%m/%d/%Y"),f.start_date_time]}.uniq
     @searched_flights = Flight.all.where(flight_params)
-    @passengers = passengers_params
   end
 
 
@@ -21,10 +19,6 @@ class FlightsController < ApplicationController
   private
   def flight_params
     params.permit(:departure_airport,:arrival_airport,:start_date_time)
-  end
-
-  def passengers_params
-    params.permit(:passengers)
   end
 
 end
