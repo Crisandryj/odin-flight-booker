@@ -10,8 +10,6 @@
  <%= f.number_field :flight_id, value: @flight_id %>
 </div>
 
-
-  <% @passengers.to_i.times do %>
     <%= f.fields_for :passengers do |passengers_form| %>
 
     <div>
@@ -25,7 +23,6 @@
     <%= passengers_form.text_field :name %>
     </div>
 
-    <% end %>
   <% end %>
 
  <%= f.submit %>
