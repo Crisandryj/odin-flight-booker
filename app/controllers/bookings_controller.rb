@@ -9,10 +9,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    @booking = Booking.create(booking_params)
+    if @booking.save
+      redirect_to root
+      flash[:notice] = "You booked."
+    else
+      flash[:alert] = "You didnt book."
   end
 
   private
+  
+  def booking_params
+    params.require()
+  end
 
 
 end
