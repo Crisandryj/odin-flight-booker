@@ -11,16 +11,15 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.create(booking_params)
     if @booking.save
-      redirect_to root
-      flash[:notice] = "You booked."
+      redirect_to root, notice: "Congrate on your booking"
     else
       flash[:alert] = "You didnt book."
   end
 
   private
-  
+
   def booking_params
-    params.require()
+    params.require(:booking).permit(:flight_id,:number_of_passengers,:passengers[:name,:email])
   end
 
 
