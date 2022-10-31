@@ -12,16 +12,17 @@
 
 
   <% @passengers.to_i.times do %>
-    <%= f.fields_for @passenger do |sub_form| %>
+    <%= f.fields_for :passengers do |passengers_form| %>
 
     <div>
-    <%= sub_form.label :email %>
-    <%= sub_form.text_field :email %>
+    <%= passengers_form.label :email %>
+    <%= passengers_form.text_field :email %>
     </div>
 
+
     <div>
-    <%= sub_form.label :name %>
-    <%= sub_form.text_field :name %>
+    <%= passengers_form.label :name %>
+    <%= passengers_form.text_field :name %>
     </div>
 
     <% end %>
