@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # raise params.inspect
     @booking = Booking.create(booking_params)
     if @booking.save
       redirect_to root_path, notice: "Congrate on your booking"
@@ -20,8 +21,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:flight_id,:passenger_id,
-                   :passengers,passengers_attributes:[:id, :name, :email])
+    params.require(:booking).permit(:flight_id,:number_of_passengers,passengers_attributes:[:id, :name, :email])
   end
 
 
