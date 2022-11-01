@@ -1,17 +1,17 @@
 <%=form_with model: @booking, method: :post do |f| %>
 <%= f.label :departure_date %>
-<%= f.text_field :start_date_time, value: @start_date_time %>
+<%= f.text_field :start_date_time %>
 
 <div>
  <%= f.label :passengers %>
- <%= f.number_field :passengers, value: @passengers %>
+ <%= f.number_field :number_of_passengers%>
 
  <%= f.label :flight_id %>
- <%= f.number_field :flight_id, value: @flight_id %>
+ <%= f.number_field :flight_id %>
 </div>
 
     <%= f.fields_for :passengers do |passengers_form| %>
-
+    <% passengers_form.hidden_field :passenger_id, value: @passenger.id %>
     <div>
     <%= passengers_form.label :email %>
     <%= passengers_form.text_field :email %>
@@ -27,3 +27,5 @@
 
  <%= f.submit %>
 <% end %>
+
+<%= @booking.number_of_passengers%>
