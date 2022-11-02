@@ -11,8 +11,8 @@ class BookingsController < ApplicationController
   def create
     # raise params.inspect
     @booking = Booking.new(booking_params)
-    if @booking.save
-      redirect_to root_path, notice: "Congrate on your booking"
+    if @booking.save(:validate => false)
+      redirect_to root_path, notice: "Congrats on your booking"
     else
       flash.now[:alert] = "You didnt book."
     end
