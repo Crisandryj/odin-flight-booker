@@ -1,4 +1,6 @@
 <%=form_with model: @booking, method: :post do |f| %>
+<% f.hidden_field :passenger_id%>
+
 <%= f.label :departure_date %>
 <%= f.text_field :start_date_time %>
 
@@ -11,7 +13,7 @@
 </div>
 
     <%= f.fields_for :passengers do |passengers_form| %>
-    <% passengers_form.hidden_field :passenger_id, value: @passenger.id %>
+    <% passengers_form.hidden_field :id %>
     <div>
     <%= passengers_form.label :email %>
     <%= passengers_form.text_field :email %>

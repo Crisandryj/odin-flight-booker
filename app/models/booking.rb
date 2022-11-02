@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   has_many :flights, inverse_of: :booking
-  has_many :passengers, through: :flights, inverse_of: :bookings
+  has_many :passengers, through: :flights
 
   validates :flight_id, presence: true
 
