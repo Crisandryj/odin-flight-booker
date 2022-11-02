@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     if @booking.save(:validate => false)
       redirect_to root_path, notice: "Congrats on your booking"
     else
-      flash.now[:alert] = "You didnt book."
+      flash.now[:alert] = "Failed to book."
     end
   end
 
