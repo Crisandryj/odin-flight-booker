@@ -14,14 +14,15 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to root_path, notice: "Congrate on your booking"
     else
-      flash[:alert] = "You didnt book."
+      flash.now[:alert] = "You didnt book."
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:passenger_id,:flight_id,:number_of_passengers,passengers_attributes:[:id, :name, :email])
+    params.require(:booking).permit(:start_date_time,:passenger_id,:flight_id,
+                                    :number_of_passengers,passengers_attributes:[:id, :name, :email])
   end
 
 
