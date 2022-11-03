@@ -13,12 +13,11 @@
 </div>
 
     <%= f.fields_for :passengers do |passengers_form| %>
-    <% passengers_form.hidden_field :id %>
+    <% passengers_form.hidden_field :id, value: nil %>
     <div>
     <%= passengers_form.label :email %>
     <%= passengers_form.text_field :email %>
     </div>
-
 
     <div>
     <%= passengers_form.label :name %>
