@@ -6,7 +6,4 @@ class Flight < ApplicationRecord
  has_many :passengers, through: :bookings
 
 
-
-
-
 end

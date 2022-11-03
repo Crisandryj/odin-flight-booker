@@ -1,0 +1,2 @@
+class RemovePassengerFromBooking < ApplicationRecord
+end

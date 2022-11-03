@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new(number_of_passengers: params[:passengers],
                           start_date_time: params[:start_date_time],
-                          flight_id:params[:flight_id][1])
+                          flight_id:params[:flight_id])
     @passenger = Passenger.new()
     @booking.number_of_passengers.times {@booking.passengers.build}
     # raise params.inspect
