@@ -29,9 +29,5 @@ class BookingsController < ApplicationController
                                     :number_of_passengers,passengers_attributes:[:id, :name, :email])
   end
 
-  def passenger_params
-    params.
-  end
-
 
 end
