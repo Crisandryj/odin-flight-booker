@@ -1,4 +1,6 @@
 <%= render :partial => "search_form"%>
+
+
 <%=form_with url: new_booking_path(:flight_id => params[:flight_id],
                                    :passengers=> params[:passengers],),
                                     method: :get do |f| %>
@@ -11,7 +13,8 @@
 <% if @searched_flights.count < 10%>
 <%= f.label :departure_airport %>
 <%= f.collection_check_boxes :flight_id, @searched_flights, :id, :departure_airport_id %>
-<% end %>
+
 
  <%= f.submit %>
+<% end %>
 <% end %>
