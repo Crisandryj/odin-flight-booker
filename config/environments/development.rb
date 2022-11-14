@@ -18,8 +18,11 @@ Rails.application.configure do
   config.server_timing = true
 
   #delivery method
+  config.action_mailer.default_url_options = {host: 'local', port: 3000}
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

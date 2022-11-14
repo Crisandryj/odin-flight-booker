@@ -3,9 +3,12 @@ class PassengerMailer < ApplicationMailer
         from: 'notifications@example.com'
 
   def welcome_email
-    @passenger = params[:passenger]
-    @url = 'http://example.com/login'
-    mail(to: @passenger.email, subject: 'Flight has been booked')
+    # raise params.inspect
+    params[:passenger].each do |passenger|
+    @passenger = passenger
+    end
+    @url = 'http://localhost:3000/'
+    mail(to: @passenger, subject: 'Flight has been booked')
   end
 
 end

@@ -11,21 +11,11 @@ class BookingsController < ApplicationController
   def create
     # raise params.inspect
     @booking = Booking.new(booking_params)
-    if @booking.save
-
-      respond_to do |format|
+    @passenger = @booking.passengers
+    # raise inspect.params
       if @booking.save
-        # Tell the UserMailer to send a welcome email after save
-        UserMailer.with(user: @passenger).welcome_email.deliver_later
-
-        format.html { redirect_to(@passenger, notice: 'User was successfully created.') }
-        format.json { render json: @passenger, status: :created, location: @passenger }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @passenger.errors, status: :unprocessable_entity }
-      end
-    end
-
+        # Tell the BookingMailer to send a welcome email after save
+        PassengerMailer.with(passenger: @passenger).welcome_email.deliver_now
       redirect_to root_path, notice: "Congrats on your booking"
     else
       flash.now[:alert] = "Failed to book."
