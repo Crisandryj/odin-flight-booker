@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def create
     # raise params.inspect
     @booking = Booking.new(booking_params)
+    binding.pry
     @passenger = @booking.passengers
     # raise inspect.params
       if @booking.save

@@ -6,6 +6,7 @@ class PassengerMailer < ApplicationMailer
     # raise params.inspect
     params[:passenger].each do |passenger|
     @passenger = passenger
+
     end
     @url = 'http://localhost:3000/'
     mail(to: @passenger, subject: 'Flight has been booked')
