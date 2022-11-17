@@ -34,7 +34,7 @@ gem "jbuilder"
 gem "letter_opener", group: :development
 
 gem 'pry', '~> 0.14.1'
-
+#debugging tool
 gem 'byebug', '~> 9.0', '>= 9.0.6'
 
 # Use Redis adapter to run Action Cable in production
