@@ -1,7 +1,7 @@
 class PassengerMailer < ApplicationMailer
   default to: -> { Passenger.pluck(:email) },
         from: 'notifications@example.com'
-
+#send welcome email
   def welcome_email
     # raise params.inspect
     params[:passenger].each do |passenger|
