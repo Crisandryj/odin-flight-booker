@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking.number_of_passengers.times {@booking.passengers.build}
     # raise params.inspect
   end
-
+#create new booking with passengers
   def create
     # raise params.inspect
     @booking = Booking.new(booking_params)
